@@ -19,20 +19,9 @@ import Layout from '../components/layout';
 
 import PageNavigation from '../components/pagenavigation';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  content: {
-    flex: '1 0 auto',
-  },
-  cover: {
-    width: 151,
-  },
+import LinkPreview from '../components/linkpreview';
+
+/*const useStyles = makeStyles((theme) => ({
   controls: {
     display: 'flex',
     alignItems: 'center',
@@ -43,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     height: 38,
     width: 38,
   },
-}));
+}));*/
 
 /*
 <div className={classes.controls}>
@@ -59,33 +48,6 @@ const useStyles = makeStyles((theme) => ({
 </div>
 */
 
-function MediaControlCard(props) {
-  const classes = useStyles();
-  const theme = useTheme();
-
-  return (
-    <Card className={classes.root}>
-      <CardMedia
-        className={classes.cover}
-        image="/static/images/cards/live-from-space.jpg"
-        title="Live from space album cover"
-      />
-      <div className={classes.details}>
-        <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-            {props.title}
-          </Typography>
-          <Typography>
-            <a href={props.url}><LinkIcon/> {props.url}</a>
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Some Descriptions...
-          </Typography>
-        </CardContent>
-      </div>
-    </Card>
-  );
-}
 
 export default function App() {
   return (
@@ -111,11 +73,11 @@ export default function App() {
         </ul>
         <p>The resources selected below are some of the best the author have seen that provide a sound theoretical foundation for building compiler/interpreters later. For Functional Style, the MPRI course goes beyond the basic semantic modelling of lambda calculus and <em>proves</em> the logical soundness of common pattern used in practical implementation. It relies on techniques such as structural induction and case analysis, comparison/bisimulation, transitive closure and defining new relations, etc. What is perhaps more surprising, and less well known, is that even the nebulous object oriented style can be rigorously modelled as well. This is done in The "Theory of Classification". A Key Theme in the series is that class is not the same as a type - instead it is more appropriately viewed as implicitly denoting a family of types. Indeed, traditionally class based inheritance has presented a challenge not entirely dissimilar to those presented by the notion of mutable variable and assignment in imperative style, as they do not fit well with the native constructs in pure math, which are our main meta-language for modelling.</p>
 
-        <MediaControlCard title="A Practitioners Guide to Reading Programming Languages Papers"
+        <LinkPreview title="A Practitioners Guide to Reading Programming Languages Papers"
           url="https://blog.acolyer.org/2018/01/26/a-practitioners-guide-to-reading-programming-languages-papers/"/>
-        <MediaControlCard title="MPRI course 2-4: Functional programming and type systems"
+        <LinkPreview title="MPRI course 2-4: Functional programming and type systems"
           url="https://xavierleroy.org/mpri/2-4/"/>
-        <MediaControlCard title="The Theory of Classification (Part 1-20), Journal of Object Technology"
+        <LinkPreview title="The Theory of Classification (Part 1-20), Journal of Object Technology"
           url="http://staffwww.dcs.shef.ac.uk/people/A.Simons/classify/"/>
 
         <h3>Special Constructs</h3>
@@ -126,10 +88,10 @@ export default function App() {
         <p>Concurrent and Parallel Programming has existed since the beginning, and it is well known that they are significantly harder than classical imperative programming because of <em>race condition</em> - more fundamentally, the arbitrary nature of the intertwining of execution order (unless restricted by synchronisation) implies that there could potentially be exponentially many possible combinations. Nevertheless, the end of the Moore's Law in recent years have shifted method to accelerate computation by relying on parallelism, starting from multi-core at the hardware level. This development increased the importance of these constructs, and effectively designed constructs can increase mainstream adoption by programmers by making it less painful and error-prone to use.</p>
         <p>As an example, Futures and Promises are two of the simplest concurrency construct there could be that provide a thin abstraction for developer. However, even with them there is a lots of subtlety once you dig beyond the surface. The chapter below is a very erudite expositions that clarify these fine prints, by situating them within the rich history associated with those concepts.</p>
 
-        <MediaControlCard title="The Smalltalk object Model"
+        <LinkPreview title="The Smalltalk object Model"
           url="http://pharo.gforge.inria.fr/PBE1/PBE1ch6.html"/>
 
-        <MediaControlCard title="Futures and Promises"
+        <LinkPreview title="Futures and Promises"
           url="http://dist-prog-book.com/chapter/2/futures.html"/>
 
         <h2>Compilers and Interpreters</h2>
@@ -137,19 +99,19 @@ export default function App() {
 
         <p>Over time, people have accumulated a body of knowledge on how to effectively write these class of programs.</p>
 
-        <MediaControlCard title="Writing an Interpreter, CESK Style"
+        <LinkPreview title="Writing an Interpreter, CESK Style"
           url="http://matt.might.net/articles/cesk-machines/" />
-        <MediaControlCard title="The Racket Manifesto"
+        <LinkPreview title="The Racket Manifesto"
           url="https://felleisen.org/matthias/manifesto/"/>
-        <MediaControlCard title="What's up with Monomorphism?"
+        <LinkPreview title="What's up with Monomorphism?"
           url="https://mrale.ph/blog/2015/01/11/whats-up-with-monomorphism.html"/>
-        <MediaControlCard title="Collasping Tower of Interpreters"
+        <LinkPreview title="Collasping Tower of Interpreters"
           url="https://www.cs.purdue.edu/homes/rompf/papers/amin-popl18.pdf"/>
-        <MediaControlCard title="Compiling Pattern Matching to good Decision Trees"
+        <LinkPreview title="Compiling Pattern Matching to good Decision Trees"
           url="https://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf"/>
-        <MediaControlCard title="Writing Hygienic Macros in Scheme with Syntax-Case"
+        <LinkPreview title="Writing Hygienic Macros in Scheme with Syntax-Case"
           url="https://legacy.cs.indiana.edu/~dyb/pubs/tr356.pdf"/>
-        <MediaControlCard title="The Nanopass Framework"
+        <LinkPreview title="The Nanopass Framework"
           url="https://nanopass.org/documentation.html"/>
 
       </Box>
