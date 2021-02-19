@@ -24,6 +24,11 @@ import GitHubButton from 'react-github-btn';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import Drawer from '@material-ui/core/Drawer';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+
+import Divider from '@material-ui/core/Divider';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -47,20 +52,37 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
 }));
 
 export default function Layout({ children }) {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [state, setState] = React.useState({
+    drawerOpen: false,
+  });
 
-  const handleClick = (event) => {
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, drawerOpen: open });
+  };
+
+  /*const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
     navigate("/language");
-  };
+  };*/
 
   const classes = useStyles();
 
@@ -73,13 +95,53 @@ export default function Layout({ children }) {
   </Toolbar>
   */
 
+  const mainMenu = (menuItems) => (
+    <div
+      className={classes.list}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      {menuItems.map((section, index) => (
+        <React.Fragment>
+        <div>{index !== 0 ? <Divider /> : <div> </div>}</div>
+        <List>
+          {section.map((item) => (
+            <ListItem button key={item.text}>
+              <ListItemIcon></ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItem>
+          ))}
+        </List>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+
+  const myMenu = [
+    [
+      { text: "Home" },
+      { text: "Theory" },
+      { text: "Language" },
+      { text: "Platform" }
+    ],
+    [
+      { text: "wtfwebdev" },
+      { text: "other" }
+    ]];
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg">
         <AppBar position="static">
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              onClick={toggleDrawer(true)}
+              color="inherit"
+              aria-label="menu">
+                <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
               HobbyistCS
@@ -93,6 +155,9 @@ export default function Layout({ children }) {
             </GitHubButton>
           </Toolbar>
         </AppBar>
+        <Drawer anchor="left" open={state["drawerOpen"]} onClose={toggleDrawer(false)}>
+          {mainMenu(myMenu)}
+        </Drawer>
         {children}
       </Container>
     </ThemeProvider>
