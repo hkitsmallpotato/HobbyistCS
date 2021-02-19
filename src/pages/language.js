@@ -17,17 +17,7 @@ import LinkIcon from '@material-ui/icons/Link';
 
 import Layout from '../components/layout';
 
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {`Built with love by the `}
-      <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </Link>
-      {` team.`}
-    </Typography>
-  );
-}
+import PageNavigation from '../components/pagenavigation';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -101,6 +91,7 @@ export default function App() {
   return (
 
     <Layout>
+      <PageNavigation>
       <h1>Testing</h1>
       <Box my={4}>
         <p>Lorem Ipsum ... <Link to="/">Go to the main page</Link></p>
@@ -162,6 +153,7 @@ export default function App() {
           url="https://nanopass.org/documentation.html"/>
 
       </Box>
+      </PageNavigation>
     </Layout>
   );
 }

@@ -25,7 +25,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import Drawer from '@material-ui/core/Drawer';
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText, ListSubheader } from '@material-ui/core';
 
 import Divider from '@material-ui/core/Divider';
 
@@ -38,6 +38,8 @@ import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import { Link } from 'gatsby-theme-material-ui';
+
+import MadeWith from './madewith';
 
 
 const theme = createMuiTheme({
@@ -110,6 +112,7 @@ export default function Layout({ children }) {
     </Typography></Box>
   </Toolbar>
   */
+  //<Typography variant="h6" className={classes.subt}>{section.subtitle}</Typography>
 
   const mainMenu = (menuItems) => (
     <div
@@ -122,7 +125,7 @@ export default function Layout({ children }) {
         <React.Fragment>
         <div>{index !== 0 ? <Divider /> : <div> </div>}</div>
         <div>{section.hasOwnProperty("subtitle") ?
-          <Typography variant="h6" className={classes.subt}>{section.subtitle}</Typography> :
+          <ListSubheader>{section.subtitle}</ListSubheader> :
           <div> </div>}</div>
         <List>
           {section.content.map((item) => {
@@ -216,6 +219,9 @@ export default function Layout({ children }) {
           {mainMenu(myMenu)}
         </Drawer>
         {children}
+        <footer>
+          <MadeWith />
+        </footer>
       </Container>
     </ThemeProvider>
   );

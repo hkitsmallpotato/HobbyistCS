@@ -18,8 +18,6 @@ import BackgroundImage from 'gatsby-background-image';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
-import ProTip from '../components/pro-tip';
-
 //import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
 
@@ -27,18 +25,6 @@ import { navigate } from "gatsby";
 
 import Layout from '../components/layout';
 
-
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {`Built with love by the `}
-      <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </Link>
-      {` team.`}
-    </Typography>
-  );
-}
 
 export const sectionImage = graphql`
   fragment sectionImage on File {
@@ -185,8 +171,6 @@ Maecenas fringilla eros non velit tristique, at tempor sapien vehicula. Etiam fa
             </TopicCard>
           </Grid>
         </Grid>
-        <ProTip />
-        <MadeWithLove />
       </Box>
     </Layout>
   );
