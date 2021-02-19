@@ -2,23 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby-theme-material-ui';
 import { Container, Box, Typography } from '@material-ui/core';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import IconButton from '@material-ui/core/IconButton';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
+//import IconButton from '@material-ui/core/IconButton';
+//import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+//import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+//import SkipNextIcon from '@material-ui/icons/SkipNext';
 
-import ProTip from '../components/pro-tip';
-
-import LinkIcon from '@material-ui/icons/Link';
 
 import Layout from '../components/layout';
-
 import PageNavigation from '../components/pagenavigation';
-
 import LinkPreview from '../components/linkpreview';
 
 /*const useStyles = makeStyles((theme) => ({
