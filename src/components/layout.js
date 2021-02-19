@@ -10,7 +10,9 @@ import { Menu, MenuItem } from '@material-ui/core';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { purple } from '@material-ui/core/colors';
+import { purple, yellow } from '@material-ui/core/colors';
+
+import { makeStyles } from '@material-ui/core/styles';
 
 import ChevronRightRoundedIcon from '@material-ui/icons/ChevronRightRounded';
 import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded';
@@ -19,11 +21,14 @@ import { navigate } from "gatsby";
 
 import GitHubButton from 'react-github-btn';
 
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
       // Purple and green play nicely together.
-      main: purple[500],
+      main: yellow[500],
     },
     secondary: {
       // This is green.A700 as hex.
@@ -31,6 +36,18 @@ const theme = createMuiTheme({
     },
   },
 });
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 export default function Layout({ children }) {
 
@@ -45,16 +62,28 @@ export default function Layout({ children }) {
     navigate("/language");
   };
 
+  const classes = useStyles();
+
   //no-preference: dark; light: light; dark: dark;
+  /*
+  <Toolbar display="flex">
+    <Box flexGrow={1}><Typography variant="h6">
+      HobbyistCS
+    </Typography></Box>
+  </Toolbar>
+  */
 
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg">
-        <AppBar position="fixed" color="transparent">
-          <Toolbar display="flex">
-            <Box flexGrow={1}><Typography variant="h6">
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
               HobbyistCS
-            </Typography></Box>
+            </Typography>
             <GitHubButton
               href="https://github.com/"
               data-color-scheme="dark"
@@ -62,27 +91,6 @@ export default function Layout({ children }) {
               aria-label="View on Github">
                 View on Github
             </GitHubButton>
-            <Button color="inherit" onMouseOver={handleClick}>
-              { Boolean(anchorEl) ? <ExpandMoreRoundedIcon /> : <ChevronRightRoundedIcon />}General
-            </Button>
-            <Button color="inherit">
-              <ChevronRightRoundedIcon />Sections
-            </Button>
-            <Menu
-              id="simple-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-              anchorOrigin={{"vertical":"bottom", "horizontal":"left"}}
-              transformOrigin={{"vertical":"top", "horizontal":"left"}}
-              getContentAnchorEl={null}
-              MenuListProps={{ onMouseLeave: handleClose }}
-            >
-              <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Theory</MenuItem>
-              <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Language</MenuItem>
-              <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Platform</MenuItem>
-            </Menu>
           </Toolbar>
         </AppBar>
         {children}
