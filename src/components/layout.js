@@ -36,6 +36,9 @@ import MemoryIcon from '@material-ui/icons/Memory';
 import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
 import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+import { Link } from 'gatsby-theme-material-ui';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -67,6 +70,11 @@ const useStyles = makeStyles((theme) => ({
   fullList: {
     width: 'auto',
   },
+
+  subt: {
+    "margin-left": "10px",
+    "margin-top": "5px"
+  }
 }));
 
 export default function Layout({ children }) {
@@ -113,13 +121,28 @@ export default function Layout({ children }) {
       {menuItems.map((section, index) => (
         <React.Fragment>
         <div>{index !== 0 ? <Divider /> : <div> </div>}</div>
+        <div>{section.hasOwnProperty("subtitle") ?
+          <Typography variant="h6" className={classes.subt}>{section.subtitle}</Typography> :
+          <div> </div>}</div>
         <List>
-          {section.map((item) => (
-            <ListItem button key={item.text} onClick={(event) => {navigate(item.link);} }>
-              <ListItemIcon>{grabIcon(item.icon)}</ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItem>
-          ))}
+          {section.content.map((item) => {
+            //The open bracket must be on the same line as return to
+            //trigger jsx detection correctly
+            switch(item.type) {
+              case "external_url":
+                return (
+                  <ListItem key={item.text}>
+                    <Link color="secondary" target="_blank" rel="noopener noreferrer"
+                      href={item.link}><OpenInNewIcon /> {item.text}</Link>
+                  </ListItem>);
+              default:
+                return (
+                  <ListItem button key={item.text} onClick={(event) => {navigate(item.link);} }>
+                    <ListItemIcon>{grabIcon(item.icon)}</ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItem>);
+            }
+          })}
         </List>
         </React.Fragment>
       ))}
@@ -127,16 +150,22 @@ export default function Layout({ children }) {
   );
 
   const myMenu = [
-    [
-      { text: "Home", icon: "HomeIcon", link: "/" },
-      { text: "Theory", icon: "FunctionsIcon", link: "/theory" },
-      { text: "Language", icon: "ChatIcon", link: "/language" },
-      { text: "Platform", icon: "MemoryIcon", link: "/platform" }
-    ],
-    [
-      { text: "wtfwebdev" },
-      { text: "other" }
-    ]];
+    {
+      content: [
+        { text: "Home", icon: "HomeIcon", link: "/" },
+        { text: "Theory", icon: "FunctionsIcon", link: "/theory" },
+        { text: "Language", icon: "ChatIcon", link: "/language" },
+        { text: "Platform", icon: "MemoryIcon", link: "/platform" }
+      ]
+    },
+    {
+      subtitle: "Other Sites",
+      content: [
+        { text: "wtfwebdev", type: "external_url", link: "https://www.google.com" },
+        { text: "other", type: "external_url", link: "https://www.apple.com" }
+      ]
+    }
+  ];
 
     //Note the outer bracket is curly - start jsx only at the end!
     const grabIcon = (icon) => {
