@@ -12,6 +12,8 @@ import IconButton from '@material-ui/core/IconButton';
 
 import { List, ListItem, ListItemText } from '@material-ui/core';
 
+import { navigate } from "gatsby";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 //padding: theme.spacing(2),
 
-export default function PageNavigation({ children }) {
+export default function PageNavigation({ children, next, nextLink, prev, prevLink }) {
   const classes = useStyles();
 
   return (
@@ -43,8 +45,8 @@ export default function PageNavigation({ children }) {
         <Grid item xs={4}>
           <Paper className={classes.paper}>
             <List className={classes.nopad}>
-              <ListItem button>
-                <ListItemText primary="Previous" secondary="Theory" />
+              <ListItem button onClick={(event) => { navigate(prevLink); }}>
+                <ListItemText primary="Previous" secondary={prev} />
               </ListItem>
             </List>
           </Paper>
@@ -54,8 +56,8 @@ export default function PageNavigation({ children }) {
         <Grid item xs={4}>
           <Paper className={classes.paper}>
             <List className={classes.nopad}>
-              <ListItem button>
-                <ListItemText align="right" primary="Next" secondary="Platform" />
+              <ListItem button onClick={(event) => { navigate(nextLink); }}>
+                <ListItemText align="right" primary="Next" secondary={next} />
               </ListItem>
             </List>
           </Paper>

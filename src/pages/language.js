@@ -91,7 +91,7 @@ export default function App() {
   return (
 
     <Layout>
-      <PageNavigation>
+      <PageNavigation prev="Theory" prevLink="/theory" next="Platform" nextLink="/platform">
       <h1>Testing</h1>
       <Box my={4}>
         <p>Lorem Ipsum ... <Link to="/">Go to the main page</Link></p>
