@@ -17,6 +17,8 @@ import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded';
 
 import { navigate } from "gatsby";
 
+import GitHubButton from 'react-github-btn';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -43,6 +45,8 @@ export default function Layout({ children }) {
     navigate("/language");
   };
 
+  //no-preference: dark; light: light; dark: dark;
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg">
@@ -51,6 +55,13 @@ export default function Layout({ children }) {
             <Box flexGrow={1}><Typography variant="h6">
               HobbyistCS
             </Typography></Box>
+            <GitHubButton
+              href="https://github.com/"
+              data-color-scheme="dark"
+              data-size="large"
+              aria-label="View on Github">
+                View on Github
+            </GitHubButton>
             <Button color="inherit" onMouseOver={handleClick}>
               { Boolean(anchorEl) ? <ExpandMoreRoundedIcon /> : <ChevronRightRoundedIcon />}General
             </Button>
