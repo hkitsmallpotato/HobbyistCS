@@ -15,6 +15,8 @@ import ProTip from '../components/pro-tip';
 
 import LinkIcon from '@material-ui/icons/Link';
 
+import Layout from '../components/layout';
+
 function MadeWithLove() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -97,7 +99,9 @@ function MediaControlCard(props) {
 
 export default function App() {
   return (
-    <Container maxWidth="lg">
+
+    <Layout>
+      <h1>Testing</h1>
       <Box my={4}>
         <p>Lorem Ipsum ... <Link to="/">Go to the main page</Link></p>
         <h2>Programming Language Theory (PLT)</h2>
@@ -158,6 +162,6 @@ export default function App() {
           url="https://nanopass.org/documentation.html"/>
 
       </Box>
-    </Container>
+    </Layout>
   );
 }
