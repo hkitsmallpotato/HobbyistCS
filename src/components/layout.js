@@ -29,6 +29,9 @@ import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 
 import Divider from '@material-ui/core/Divider';
 
+import HomeIcon from '@material-ui/icons/Home';
+import MemoryIcon from '@material-ui/icons/Memory';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -108,7 +111,7 @@ export default function Layout({ children }) {
         <List>
           {section.map((item) => (
             <ListItem button key={item.text}>
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon>{grabIcon(item.icon)}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItem>
           ))}
@@ -120,15 +123,27 @@ export default function Layout({ children }) {
 
   const myMenu = [
     [
-      { text: "Home" },
+      { text: "Home", icon: "HomeIcon" },
       { text: "Theory" },
       { text: "Language" },
-      { text: "Platform" }
+      { text: "Platform", icon: "MemoryIcon" }
     ],
     [
       { text: "wtfwebdev" },
       { text: "other" }
     ]];
+
+    //Note the outer bracket is curly - start jsx only at the end!
+    const grabIcon = (icon) => {
+      switch(icon) {
+        case "HomeIcon":
+          return <HomeIcon />;
+        case "MemoryIcon":
+          return <MemoryIcon />;
+        default:
+          return <></>;
+      }
+    }
 
   return (
     <ThemeProvider theme={theme}>
