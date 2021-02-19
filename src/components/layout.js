@@ -30,7 +30,12 @@ import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 
 import HomeIcon from '@material-ui/icons/Home';
+import FunctionsIcon from '@material-ui/icons/Functions';
+import ChatIcon from '@material-ui/icons/Chat';
 import MemoryIcon from '@material-ui/icons/Memory';
+import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
+import BubbleChartIcon from '@material-ui/icons/BubbleChart';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -110,7 +115,7 @@ export default function Layout({ children }) {
         <div>{index !== 0 ? <Divider /> : <div> </div>}</div>
         <List>
           {section.map((item) => (
-            <ListItem button key={item.text}>
+            <ListItem button key={item.text} onClick={(event) => {navigate(item.link);} }>
               <ListItemIcon>{grabIcon(item.icon)}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItem>
@@ -123,10 +128,10 @@ export default function Layout({ children }) {
 
   const myMenu = [
     [
-      { text: "Home", icon: "HomeIcon" },
-      { text: "Theory" },
-      { text: "Language" },
-      { text: "Platform", icon: "MemoryIcon" }
+      { text: "Home", icon: "HomeIcon", link: "/" },
+      { text: "Theory", icon: "FunctionsIcon", link: "/theory" },
+      { text: "Language", icon: "ChatIcon", link: "/language" },
+      { text: "Platform", icon: "MemoryIcon", link: "/platform" }
     ],
     [
       { text: "wtfwebdev" },
@@ -138,8 +143,16 @@ export default function Layout({ children }) {
       switch(icon) {
         case "HomeIcon":
           return <HomeIcon />;
+        case "FunctionsIcon":
+          return <FunctionsIcon />;
+        case "ChatIcon":
+          return <ChatIcon />;
         case "MemoryIcon":
           return <MemoryIcon />;
+        case "CollectionsBookmarkIcon":
+          return <CollectionsBookmarkIcon />;
+        case "BubbleChartIcon":
+          return <BubbleChartIcon />;
         default:
           return <></>;
       }
