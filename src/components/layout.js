@@ -1,53 +1,81 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import React from "react";
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Container, Box, Typography } from '@material-ui/core';
 
-import Header from "./header"
-import "./layout.css"
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+import { Menu, MenuItem } from '@material-ui/core';
+
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { purple } from '@material-ui/core/colors';
+
+import ChevronRightRoundedIcon from '@material-ui/icons/ChevronRightRounded';
+import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded';
+
+import { navigate } from "gatsby";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: purple[500],
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#11cb5f',
+    },
+  },
+});
+
+export default function Layout({ children }) {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+    navigate("/language");
+  };
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <Container maxWidth="lg">
+        <AppBar position="fixed" color="transparent">
+          <Toolbar display="flex">
+            <Box flexGrow={1}><Typography variant="h6">
+              HobbyistCS
+            </Typography></Box>
+            <Button color="inherit" onMouseOver={handleClick}>
+              { Boolean(anchorEl) ? <ExpandMoreRoundedIcon /> : <ChevronRightRoundedIcon />}General
+            </Button>
+            <Button color="inherit">
+              <ChevronRightRoundedIcon />Sections
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              anchorOrigin={{"vertical":"bottom", "horizontal":"left"}}
+              transformOrigin={{"vertical":"top", "horizontal":"left"}}
+              getContentAnchorEl={null}
+              MenuListProps={{ onMouseLeave: handleClose }}
+            >
+              <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Theory</MenuItem>
+              <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Language</MenuItem>
+              <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Platform</MenuItem>
+            </Menu>
+          </Toolbar>
+        </AppBar>
+        {children}
+      </Container>
+    </ThemeProvider>
+  );
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout

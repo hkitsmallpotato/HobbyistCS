@@ -15,39 +15,18 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import BackgroundImage from 'gatsby-background-image';
 
-import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
 import ProTip from '../components/pro-tip';
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
-import { purple } from '@material-ui/core/colors';
-
-import ChevronRightRoundedIcon from '@material-ui/icons/ChevronRightRounded';
-import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded';
-
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+//import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+//import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import { navigate } from "gatsby";
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      // Purple and green play nicely together.
-      main: purple[500],
-    },
-    secondary: {
-      // This is green.A700 as hex.
-      main: '#11cb5f',
-    },
-  },
-});
+import Layout from '../components/layout';
+
 
 function MadeWithLove() {
   return (
@@ -145,48 +124,19 @@ function TopicCard(props) {
 
 export default function App({ data }) {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  //const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
+  /*const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
     navigate("/language");
-  };
+  };*/
 
   return (
-    <ThemeProvider theme={theme}>
-    <Container maxWidth="lg">
-      <AppBar position="fixed" color="transparent">
-        <Toolbar display="flex">
-          <Box flexGrow={1}><Typography variant="h6">
-            HobbyistCS
-          </Typography></Box>
-          <Button color="inherit" onMouseOver={handleClick}>
-            { Boolean(anchorEl) ? <ExpandMoreRoundedIcon /> : <ChevronRightRoundedIcon />}General
-          </Button>
-          <Button color="inherit">
-            <ChevronRightRoundedIcon />Sections
-          </Button>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            anchorOrigin={{"vertical":"bottom", "horizontal":"left"}}
-            transformOrigin={{"vertical":"top", "horizontal":"left"}}
-            getContentAnchorEl={null}
-            MenuListProps={{ onMouseLeave: handleClose }}
-          >
-            <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Theory</MenuItem>
-            <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Language</MenuItem>
-            <MenuItem onClick={handleClose}><ChevronRightRoundedIcon />Platform</MenuItem>
-          </Menu>
-        </Toolbar>
-      </AppBar>
+    <Layout>
       <Toolbar color="yellow"/>
       <Box my={4}>
         <Container style={{"minHeight": "40vh", "backgroundColor": "yellow"}}>Testing</Container>
@@ -238,7 +188,6 @@ Maecenas fringilla eros non velit tristique, at tempor sapien vehicula. Etiam fa
         <ProTip />
         <MadeWithLove />
       </Box>
-    </Container>
-    </ThemeProvider>
+    </Layout>
   );
 }
