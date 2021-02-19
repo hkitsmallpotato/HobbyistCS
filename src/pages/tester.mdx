@@ -1,0 +1,28 @@
+import ProTip from '../components/pro-tip';
+import { StaticQuery, graphql } from "gatsby";
+
+# My title
+
+## hello
+
+Hey there, this is a test.
+
+<a href="www.google.com">link</a>
+
+<ProTip/>
+
+<StaticQuery
+  query={graphql`
+    query TestQuery {
+      allLoremJson {
+        edges {
+          node {
+            url
+            title
+          }
+        }
+      }
+  }`}
+  render={data => (
+    <a href={data.allLoremJson.edges[1].node.url}>{data.allLoremJson.edges[1].node.title}</a>
+  )} />
