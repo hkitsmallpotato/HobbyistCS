@@ -1,5 +1,20 @@
 import ProTip from '../components/pro-tip';
 import { StaticQuery, graphql } from "gatsby";
+import GroupByCat from '../util/processdata';
+import LinkList from '../components/linklist';
+
+export const pageQuery=graphql`
+  query {
+    allLanguageJson {
+      nodes {
+        category
+        subcategory
+        title
+        url
+        id
+      }
+    }
+  }`
 
 # My title
 
@@ -11,18 +26,5 @@ Hey there, this is a test.
 
 <ProTip/>
 
-<StaticQuery
-  query={graphql`
-    query TestQuery {
-      allLoremJson {
-        edges {
-          node {
-            url
-            title
-          }
-        }
-      }
-  }`}
-  render={data => (
-    <a href={data.allLoremJson.edges[1].node.url}>{data.allLoremJson.edges[1].node.title}</a>
-  )} />
+<LinkList list={GroupByCat(props.data.allLanguageJson.nodes)["compilers-and-interpreters"]["misc"]} />
+<div>{GroupByCat(props.data.allLanguageJson.nodes)["plt"]["big-three"][0].url}</div>
