@@ -41,7 +41,7 @@ import { Link } from 'gatsby-theme-material-ui';
 
 import MadeWith from './madewith';
 
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
 
 const theme = createMuiTheme({

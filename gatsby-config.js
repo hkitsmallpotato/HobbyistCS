@@ -3,6 +3,7 @@ module.exports = {
     title: `HobbyistCS`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `lemontea`,
+    authorprofile: "https://github.com/lemonteaa",
     menu: [
       { text: "Home", icon: "HomeIcon", link: "/" },
       { text: "Theory", icon: "FunctionsIcon", link: "/theory" },
