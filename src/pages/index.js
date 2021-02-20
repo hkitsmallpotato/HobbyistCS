@@ -142,7 +142,7 @@ Curabitur diam mi, mattis quis accumsan et, sodales et nisi. Class aptent taciti
 Maecenas fringilla eros non velit tristique, at tempor sapien vehicula. Etiam faucibus fringilla nunc at posuere. Nulla libero metus, tristique at odio ac, egestas vulputate ipsum. Pellentesque eget porttitor orci. Mauris vel metus et elit pretium efficitur a sed diam. Donec luctus faucibus dui non volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
         </p>
         <Grid container spacing={2}>
-          <Grid item lg={4}>
+          <Grid item sm={12} md={6} lg={4}>
             <TopicCard image={data["sec_img_theory"]} title={"Theory"} color={"red"} dest={"/theory"}>
               Gaining insights into the universal laws of computing.
               <ul>
@@ -151,7 +151,7 @@ Maecenas fringilla eros non velit tristique, at tempor sapien vehicula. Etiam fa
               </ul>
             </TopicCard>
           </Grid>
-          <Grid item lg={4}>
+          <Grid item sm={12} md={6} lg={4}>
             <TopicCard image={data["sec_img_lang"]} title={"Language"} color={"green"} dest={"/language"}>
               Learn programming languages more thoroughly by studying from first principles.
               <ul>
@@ -160,7 +160,7 @@ Maecenas fringilla eros non velit tristique, at tempor sapien vehicula. Etiam fa
               </ul>
             </TopicCard>
           </Grid>
-          <Grid item lg={4}>
+          <Grid item sm={12} md={6} lg={4}>
             <TopicCard image={data["sec_img_platform"]} title={"Platform"} color={"blue"} dest={"/platform"}>
               Peeling back the abstractions to reveal the low level details of how a computer works.
               <ul>

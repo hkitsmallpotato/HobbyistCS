@@ -42,7 +42,7 @@ export default function PageNavigation({ children, next, nextLink, prev, prevLin
         <Grid item xs={12}>
           { children }
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={5} md={4}>
           <Paper className={classes.paper}>
             <List className={classes.nopad}>
               <ListItem button onClick={(event) => { navigate(prevLink); }}>
@@ -51,9 +51,9 @@ export default function PageNavigation({ children, next, nextLink, prev, prevLin
             </List>
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={0} sm={2} md={4}>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={5} md={4}>
           <Paper className={classes.paper}>
             <List className={classes.nopad}>
               <ListItem button onClick={(event) => { navigate(nextLink); }}>
