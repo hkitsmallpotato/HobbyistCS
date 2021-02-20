@@ -41,6 +41,8 @@ import { Link } from 'gatsby-theme-material-ui';
 
 import MadeWith from './madewith';
 
+import { useStaticQuery, graphql } from "gatsby"
+
 
 const theme = createMuiTheme({
   palette: {
@@ -152,21 +154,34 @@ export default function Layout({ children }) {
     </div>
   );
 
+  const menuData = useStaticQuery(graphql`
+    query MenuQuery {
+      site {
+        siteMetadata {
+          title
+          menu {
+            icon
+            link
+            text
+          }
+          linkedsites {
+            link
+            text
+            type
+          }
+          githubrepo
+        }
+      }
+    }
+  `);
+
   const myMenu = [
     {
-      content: [
-        { text: "Home", icon: "HomeIcon", link: "/" },
-        { text: "Theory", icon: "FunctionsIcon", link: "/theory" },
-        { text: "Language", icon: "ChatIcon", link: "/language" },
-        { text: "Platform", icon: "MemoryIcon", link: "/platform" }
-      ]
+      content: menuData.site.siteMetadata.menu
     },
     {
       subtitle: "Other Sites",
-      content: [
-        { text: "wtfwebdev", type: "external_url", link: "https://www.google.com" },
-        { text: "other", type: "external_url", link: "https://www.apple.com" }
-      ]
+      content: menuData.site.siteMetadata.linkedsites
     }
   ];
 
@@ -204,10 +219,10 @@ export default function Layout({ children }) {
                 <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              HobbyistCS
+              {menuData.site.siteMetadata.title}
             </Typography>
             <GitHubButton
-              href="https://github.com/"
+              href={menuData.site.siteMetadata.githubrepo}
               data-color-scheme="dark"
               data-size="large"
               aria-label="View on Github">
