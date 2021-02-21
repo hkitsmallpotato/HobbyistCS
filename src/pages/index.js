@@ -49,6 +49,12 @@ export const query = graphql`
     sec_img_platform: file(relativePath: { eq: "computer-electronics-velka.jpg" }) {
       ...sectionImage
     }
+    sec_img_resource: file(relativePath: { eq: "library-1147815_1280.jpg" }) {
+      ...sectionImage
+    }
+    sec_img_topic: file(relativePath: { eq: "control-center-1054460_1920.jpg" }) {
+      ...sectionImage
+    }
     site {
       siteMetadata {
         title
@@ -184,6 +190,16 @@ export default function App({ data }) {
                 <li>Computer Organization and Design</li>
                 <li>Operating System</li>
               </ul>
+            </TopicCard>
+          </Grid>
+          <Grid item sm={12} md={6} lg={4}>
+            <TopicCard image={data["sec_img_resource"]} title={"General Resources"} color={"grey"} dest={"/generalresources"}>
+              A bunch of generally useful links.
+            </TopicCard>
+          </Grid>
+          <Grid item sm={12} md={6} lg={4}>
+            <TopicCard image={data["sec_img_topic"]} title={"Other Topics"} color={"purple"} dest={"/othertopics"}>
+              Topics that are usually taught after the core/foundation is done, as well as misc. topics.
             </TopicCard>
           </Grid>
         </Grid>
