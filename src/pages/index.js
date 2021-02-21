@@ -127,10 +127,36 @@ export default function App({ data }) {
     <Layout>
       <Toolbar color="yellow"/>
       <Box my={4}>
+        <Typography variant="h2">
+          Welcome!
+        </Typography>
         <Alert severity="warning">
           <AlertTitle>Site Under Construction</AlertTitle>
           We are still working on it, so expect rought edges and empty sections.
         </Alert>
+        <Typography variant="body1">
+          Welcome to Hobbyist CS! This site is a simultaneously light and serious take on basic CS, skidding the boundary between the world of academia and the world of practitioners.
+        </Typography>
+        <Typography variant="body1">
+        Are you:
+        <ul>
+        <li>Someone who wants to become a software engineer, or are learning to become one, but find yourself getting stuck because you don't have enough CS background?</li>
+        <li>Someone who did a CS undergrad, but find the basics too boring, or too technical/dry, and can't see how that's relevant to the daily grind of a typical software engineering job?</li>
+        <li>Moreover, you don't see the big picture - how everything fits together (oh no, you slept through *that* special lecture where the professor told you exactly that &gt;_&lt;)</li>
+        </ul>
+        </Typography>
+        <Typography variant="h4">
+          Why CS?
+        </Typography>
+        <Typography variant="h4">
+          The technology stack
+        </Typography>
+        <Typography variant="h4">
+          CS is a living subject
+        </Typography>
+        <Typography variant="h3">
+          Sections
+        </Typography>
         <Grid container spacing={2}>
           <Grid item sm={12} md={6} lg={4}>
             <TopicCard image={data["sec_img_theory"]} title={"Theory"} color={"red"} dest={"/theory"}>
@@ -161,6 +187,32 @@ export default function App({ data }) {
             </TopicCard>
           </Grid>
         </Grid>
+        <Typography variant="h3">
+          Overview
+        </Typography>
+        <Typography variant="body1">
+        As we've mentioned in Introduction, the primary objective of a CS education is to teach enough stuff so that one understand how a computer works in a big picture manner - but with enough details that you can work effectively with parts that goes wrong to fix it. And by big picture, we mean grokking the whole thing end-to-end or in other words, to grasp the whole stack. (There are other, higher objectives, but let's ignore that for now.)
+        </Typography>
+
+        <Typography variant="body1">
+        Although the exact stacks will differ depending on which field in CS you end up working in, any computer programs are going to run on a "base stack" that is more or less stable - and this is what the "Core" subjects are all about.
+        </Typography>
+
+        <Typography variant="body1">
+        When you run a program on a Personal Computer [1], a lots happen - made possible by the collective efforts of generations of engineering:
+        </Typography>
+
+        <Typography variant="body1">
+        <ul>
+        <li>The program is normally written in specially designed, artificial languages called Programming Language, that are understandable by Human - and that human can work with manually. Unfortunately, computer only run a special kind of code that is in a different language (Let's call it machine code for now). How do we design the languages? And how do we bridge this gap between the human world and the computer world? This is what the Language section address.</li>
+        <li>Even if we understand how the language works, at the end of the day, the machine code still need to get physically executed. How does that happen? Moreover, in our scenario, we probably manually triggered the program from within the Operating System (OS) our computer is running. What is the role that the OS play? It turns out that there is an intricate dance between the hardware and the OS to present (the illusion of) a relatively nice platform upon which our program runs. This is what the Platform section is all about.</li>
+        <li>And finally, permeating all of these are the ideas and thinkings - the brain behind CS. Why is the tech stack arranged in this way? Are there universal principles that affects how computing works, and what lessons can we extract from it? As we will see, Theoretical Computer Science will both answer these questions, and indeed provide the philosophy underlying the design of modern computer. Moreover, Algorithm and Data Structure are both subjects that tell us how to write program in such a way that it will run efficiently and produce correct result. [2] Together, these subjects constitute the Theory part.</li>
+        </ul>
+        </Typography>
+
+        <Typography variant="body1">
+        A minor note. A common classification scheme is to split computing into Software and Hardware. A simple way to put it is that Hardware is the physical thing that you can, in theory, touch - Software is the abstract stuff that happen. If we apply that scheme here, then all of Theory and Language and Operating System in Platform count as Software; Computer Architecture and Digital Circuits are Hardware.
+        </Typography>
       </Box>
     </Layout>
   );
