@@ -55,7 +55,7 @@ export default function MadeWith() {
         Built with <FavoriteIcon /> by
         <Link color="inherit" href={data.site.siteMetadata.authorprofile}>
           <GitHubIcon /> {data.site.siteMetadata.author}
-        </Link>, {thisYear}.
+        </Link> in Hong Kong, {thisYear}.
       </Box>
     </Typography>
   );

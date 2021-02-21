@@ -6,7 +6,7 @@ export default function LinkList(props) {
   return (
     <List>
       {props.list.map((item) => (
-        <ListItem>
+        <ListItem key={item.id}>
           <LinkPreview title={item.title} url={item.url} />
         </ListItem>
       ))}

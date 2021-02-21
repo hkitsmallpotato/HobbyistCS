@@ -127,25 +127,25 @@ export default function Layout({ children }) {
       onKeyDown={toggleDrawer(false)}
     >
       {menuItems.map((section, index) => (
-        <React.Fragment>
+        <React.Fragment key={index}>
         <div>{index !== 0 ? <Divider /> : <div> </div>}</div>
         <div>{section.hasOwnProperty("subtitle") ?
           <ListSubheader>{section.subtitle}</ListSubheader> :
           <div> </div>}</div>
         <List>
-          {section.content.map((item) => {
+          {section.content.map((item, index) => {
             //The open bracket must be on the same line as return to
             //trigger jsx detection correctly
             switch(item.type) {
               case "external_url":
                 return (
-                  <ListItem key={item.text}>
+                  <ListItem key={index}>
                     <Link color="secondary" target="_blank" rel="noopener noreferrer"
                       href={item.link}><OpenInNewIcon /> {item.text}</Link>
                   </ListItem>);
               default:
                 return (
-                  <ListItem button key={item.text} onClick={(event) => {navigate(item.link);} }>
+                  <ListItem button key={index} onClick={(event) => {navigate(item.link);} }>
                     <ListItemIcon>{grabIcon(item.icon)}</ListItemIcon>
                     <ListItemText primary={item.text} />
                   </ListItem>);
