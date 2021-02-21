@@ -1,6 +1,6 @@
 import React from "react";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { Container, Box, Typography } from '@material-ui/core';
+import { Container, Box, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
@@ -14,6 +14,8 @@ import { List, ListItem, ListItemText } from '@material-ui/core';
 
 import { navigate } from "gatsby";
 
+import printDateFormatted from '../util/datetime';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -24,11 +26,14 @@ const useStyles = makeStyles((theme) => ({
   },
   nopad: {
     padding: '0 0 0 0'
-  }
+  },
+  button: {
+    margin: theme.spacing(1),
+  },
 }));
 //padding: theme.spacing(2),
 
-export default function PageNavigation({ children, next, nextLink, prev, prevLink }) {
+export default function PageNavigation({ children, next, nextLink, prev, prevLink, date }) {
   const classes = useStyles();
 
   return (
@@ -36,8 +41,20 @@ export default function PageNavigation({ children, next, nextLink, prev, prevLin
 
       <Grid container spacing={3}>
         <Grid item xs={12}>
-        <IconButton><ArrowBackIcon /></IconButton>
-            <Link>Home</Link>
+          <Button
+            variant="outlined"
+            color="secondary"
+            className={classes.button}
+            startIcon={<ArrowBackIcon />}
+            onClick={(e) => { navigate("/"); }}
+          >
+            Go Home
+          </Button>
+          <Box fontStyle="italic" style={{ float: "right", marginTop: "15px" }}>
+            <Typography variant="body2" color="textSecondary" style={{ fontWeight: 600 }}>
+              Last Updated: {printDateFormatted(new Date(date))}
+            </Typography>
+          </Box>
         </Grid>
         <Grid item xs={12}>
           { children }
@@ -51,7 +68,7 @@ export default function PageNavigation({ children, next, nextLink, prev, prevLin
             </List>
           </Paper>
         </Grid>
-        <Grid item xs={0} sm={2} md={4}>
+        <Grid item xs={false} sm={2} md={4}>
         </Grid>
         <Grid item xs={12} sm={5} md={4}>
           <Paper className={classes.paper}>

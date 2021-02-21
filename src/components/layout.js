@@ -10,7 +10,7 @@ import { Menu, MenuItem } from '@material-ui/core';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { purple, yellow } from '@material-ui/core/colors';
+import { purple, yellow, grey, orange } from '@material-ui/core/colors';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -51,9 +51,12 @@ const theme = createMuiTheme({
       main: yellow[500],
     },
     secondary: {
-      // This is green.A700 as hex.
-      main: '#11cb5f',
+      // This is green.A700 as hex. #11cb5f
+      main: orange[500],
     },
+    text: {
+      secondary: grey[500],
+    }
   },
 });
 

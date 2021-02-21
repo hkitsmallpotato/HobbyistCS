@@ -1,3 +1,6 @@
+---
+date: 2021-02-19
+---
 import { Link } from 'gatsby-theme-material-ui';
 import { Container, Box, Typography } from '@material-ui/core';
 
@@ -23,7 +26,7 @@ export const pageQuery=graphql`
   }`
 
 <Layout>
-<PageNavigation prev="Theory" prevLink="/theory" next="Platform" nextLink="/platform">
+<PageNavigation prev="Theory" prevLink="/theory" next="Platform" nextLink="/platform" date={props.pageContext.frontmatter.date}>
 
 Lorem Ipsum ... <Link to="/">Go to the main page</Link>
 
