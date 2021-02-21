@@ -48,7 +48,7 @@ export default function MadeWith() {
       <Box>
         Hosted on <Link href="https://fleek.co/hosting/"><Img fixed={data.img_hosting.childImageSharp.fixed} /></Link>.
         If you like what I did, consider
-        <a href="https://www.buymeacoffee.com/lemonteahk" target="_blank" rel="noreferrer">
+        <a href="https://www.buymeacoffee.com/lemonteahk" target="_blank" rel="noopener noreferrer">
         <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{height: "30px", width: "109px"}} /></a>
       </Box>
       <Box>

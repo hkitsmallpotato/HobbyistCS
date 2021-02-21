@@ -42,7 +42,7 @@ export default function LinkPreview(props) {
             {props.title}
           </Typography>
           <Typography variant="subtitle2">
-            <a href={props.url}><LinkIcon fontSize="small" /> {props.url}</a>
+            <a href={props.url} target="_blank" rel="noopener noreferrer"><LinkIcon fontSize="small" /> {props.url}</a>
           </Typography>
           <Typography variant="body1" color="textSecondary">
             {props.description ? props.description : ""}
