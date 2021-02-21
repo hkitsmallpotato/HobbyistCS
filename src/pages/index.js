@@ -193,7 +193,7 @@ export default function App({ data }) {
             </TopicCard>
           </Grid>
           <Grid item sm={12} md={6} lg={4}>
-            <TopicCard image={data["sec_img_resource"]} title={"General Resources"} color={"grey"} dest={"/generalresources"}>
+            <TopicCard image={data["sec_img_resource"]} title={"General Resources"} color={"grey"} dest={"/general"}>
               A bunch of generally useful links.
             </TopicCard>
           </Grid>

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 13,
+    "title": "Teach Yourself Computer Science",
+    "url": "https://teachyourselfcs.com/",
+    "category": "general",
+    "subcategory": "syllabus",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 14,
+    "title": "What every computer science major should know",
+    "url": "http://matt.might.net/articles/what-cs-majors-should-know/",
+    "category": "general",
+    "subcategory": "syllabus",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 15,
+    "title": "Papers We Love (PWL)",
+    "url": "https://github.com/papers-we-love/papers-we-love",
+    "category": "general",
+    "subcategory": "papers",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 16,
+    "title": "the morning paper",
+    "url": "https://blog.acolyer.org/",
+    "category": "general",
+    "subcategory": "papers",
+    "thumbnail": "../images/generic_document.png"
+  }
+]
