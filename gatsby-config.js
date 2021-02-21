@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `HobbyistCS`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Reviewing basic CS (Site under construction)`,
     author: `lemontea`,
     authorprofile: "https://github.com/lemonteaa",
     menu: [
@@ -11,10 +11,9 @@ module.exports = {
       { text: "Platform", icon: "MemoryIcon", link: "/platform" }
     ],
     linkedsites: [
-      { text: "wtfwebdev", type: "external_url", link: "https://www.google.com" },
-      { text: "other", type: "external_url", link: "https://www.apple.com" }
+      { text: "wtfwebdev", type: "external_url", link: "http://todo.local" }
     ],
-    githubrepo: "https://github.com/testing"
+    githubrepo: "https://github.com/hkitsmallpotato/HobbyistCS"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
