@@ -10,6 +10,8 @@ import LinkIcon from '@material-ui/icons/Link';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
+import Img from 'gatsby-image';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -31,21 +33,19 @@ export default function LinkPreview(props) {
 
   return (
     <Card className={classes.root}>
-      <CardMedia
-        className={classes.cover}
-        image="/static/images/cards/live-from-space.jpg"
-        title="Live from space album cover"
-      />
+      <CardMedia className={classes.cover}>
+        <Img fluid={props.img} />
+      </CardMedia>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5">
             {props.title}
           </Typography>
-          <Typography>
-            <a href={props.url}><LinkIcon/> {props.url}</a>
+          <Typography variant="subtitle2">
+            <a href={props.url}><LinkIcon fontSize="small" /> {props.url}</a>
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Some Descriptions...
+          <Typography variant="body1" color="textSecondary">
+            {props.description ? props.description : ""}
           </Typography>
         </CardContent>
       </div>

@@ -4,83 +4,95 @@
     "title": "A Practitioners Guide to Reading Programming Languages Papers",
     "url": "https://blog.acolyer.org/2018/01/26/a-practitioners-guide-to-reading-programming-languages-papers/",
     "category": "plt",
-    "subcategory": "big-three"
+    "subcategory": "big-three",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 2,
     "title": "MPRI course 2-4: Functional programming and type systems",
     "url": "https://xavierleroy.org/mpri/2-4/",
     "category": "plt",
-    "subcategory": "big-three"
+    "subcategory": "big-three",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 3,
     "title": "The Theory of Classification (Part 1-20), Journal of Object Technology",
     "url": "http://staffwww.dcs.shef.ac.uk/people/A.Simons/classify/",
     "category": "plt",
-    "subcategory": "big-three"
+    "subcategory": "big-three",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 4,
     "title": "The Smalltalk object Model",
     "url": "http://pharo.gforge.inria.fr/PBE1/PBE1ch6.html",
     "category": "plt",
-    "subcategory": "special-constructs"
+    "subcategory": "special-constructs",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 5,
     "title": "Futures and Promises",
     "url": "http://dist-prog-book.com/chapter/2/futures.html",
     "category": "plt",
-    "subcategory": "special-constructs"
+    "subcategory": "special-constructs",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 6,
     "title": "Writing an Interpreter, CESK Style",
     "url": "http://matt.might.net/articles/cesk-machines/",
     "category": "compilers-and-interpreters",
-    "subcategory": "modern-techniques"
+    "subcategory": "modern-techniques",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 7,
     "title": "What's up with Monomorphism?",
     "url": "https://mrale.ph/blog/2015/01/11/whats-up-with-monomorphism.html",
     "category": "compilers-and-interpreters",
-    "subcategory": "modern-techniques"
+    "subcategory": "modern-techniques",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 8,
     "title": "Collasping Tower of Interpreters",
     "url": "https://www.cs.purdue.edu/homes/rompf/papers/amin-popl18.pdf",
     "category": "compilers-and-interpreters",
-    "subcategory": "modern-techniques"
+    "subcategory": "modern-techniques",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 9,
     "title": "Compiling Pattern Matching to good Decision Trees",
     "url": "https://www.cs.tufts.edu/~nr/cs257/archive/luc-maranget/jun08.pdf",
     "category": "compilers-and-interpreters",
-    "subcategory": "specific-features"
+    "subcategory": "specific-features",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 10,
     "title": "Writing Hygienic Macros in Scheme with Syntax-Case",
     "url": "https://legacy.cs.indiana.edu/~dyb/pubs/tr356.pdf",
     "category": "compilers-and-interpreters",
-    "subcategory": "specific-features"
+    "subcategory": "specific-features",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 11,
     "title": "The Nanopass Framework",
     "url": "https://nanopass.org/documentation.html",
     "category": "compilers-and-interpreters",
-    "subcategory": "misc"
+    "subcategory": "misc",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   },
   {
     "id": 12,
     "title": "The Racket Manifesto",
     "url": "https://felleisen.org/matthias/manifesto/",
     "category": "compilers-and-interpreters",
-    "subcategory": "misc"
+    "subcategory": "misc",
+    "thumbnail": "../images/linkpreviews/thumbnail_21.png"
   }
 ]

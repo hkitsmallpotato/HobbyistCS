@@ -5,11 +5,14 @@ import { List, ListItem } from '@material-ui/core';
 export default function LinkList(props) {
   return (
     <List>
-      {props.list.map((item) => (
+      {props.list.map((item) => {
+        console.log(item);
+        return (
         <ListItem key={item.id}>
-          <LinkPreview title={item.title} url={item.url} />
-        </ListItem>
-      ))}
+          <LinkPreview title={item.title} url={item.url}
+            img={item.thumbnail.childImageSharp.fluid} />
+        </ListItem>);
+      })}
     </List>
   )
 }

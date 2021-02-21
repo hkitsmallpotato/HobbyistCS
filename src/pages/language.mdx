@@ -21,6 +21,13 @@ export const pageQuery=graphql`
         title
         url
         id
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 151, maxHeight: 151, fit: CONTAIN, background: "rgba(255,255,255,1)") {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }`
