@@ -41,6 +41,13 @@ jobs:
       with:
         node-version: '14.x'
     - shell: bash
+      env:
+        DYNV6_TOKEN: ${{ secrets.DYNV6_TOKEN }}
+        DYNV6_ZONEID: ${{ secrets.DYNV6_ZONEID }}
+        DYNV6_RECORDID: ${{ secrets.DYNV6_RECORDID }}
       run: |
-        result=$(npx ipfs-deploy public/ -C -O -p infura)
-        echo "node returned: $result"
+        ipfshash=$(npx ipfs-deploy public/ -C -O -p infura)
+        echo "ipfs-deploy returned: $ipfshash"
+        curl -X PATCH "https://dynv6.com/api/v2/zones/$DYNV6_ZONEID/records/$DYNV6_RECORDID" \
+        -H "Authorization: Bearer $DYNV6_TOKEN" -H "Accept: application/json" -H "Content-Type: application/json" \
+        -d "{\"data\":\"dnslink=/ipfs/$ipfshash\"}"
