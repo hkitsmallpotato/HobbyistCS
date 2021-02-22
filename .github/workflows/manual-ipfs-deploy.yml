@@ -35,6 +35,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: site
+        path: public/
     - name: Use LTS Node.js
       uses: actions/setup-node@v1
       with:
