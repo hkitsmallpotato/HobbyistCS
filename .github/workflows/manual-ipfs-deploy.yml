@@ -9,9 +9,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
       with:
@@ -24,3 +22,24 @@ jobs:
       run: npm install
     - name: Build Gatsby site
       run: npm run clean && npm run build
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: site
+        path: public/
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: site
+    - name: Use LTS Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+    - shell: bash
+      run: |
+        result=$(npx ipfs-deploy public/ -C -O -p infura)
+        echo "node returned: $result"
