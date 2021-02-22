@@ -15,6 +15,7 @@ module.exports = {
     ],
     githubrepo: "https://github.com/hkitsmallpotato/HobbyistCS"
   },
+  pathPrefix: '__GATSBY_IPFS_PATH_PREFIX__',
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -43,6 +44,7 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       }
     },
+    `gatsby-plugin-ipfs`,
     /*{
       resolve: `gatsby-plugin-manifest`,
       options: {
