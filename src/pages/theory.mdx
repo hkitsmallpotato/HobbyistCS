@@ -1,0 +1,94 @@
+---
+date: 2021-02-26
+---
+import { Link } from 'gatsby-theme-material-ui';
+import { Container, Box, Typography } from '@material-ui/core';
+
+import Layout from '../components/layout';
+import PageNavigation from '../components/pagenavigation';
+import LinkPreview from '../components/linkpreview';
+import LinkList from '../components/linklist';
+import GroupByCat from '../util/processdata';
+
+import { graphql } from 'gatsby';
+
+export const pageQuery=graphql`
+  query {
+    allTheoryJson {
+      nodes {
+        category
+        subcategory
+        title
+        url
+        id
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 151, maxHeight: 151, fit: CONTAIN, background: "rgba(255,255,255,1)") {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }`
+
+<Layout>
+<PageNavigation prev="Home" prevLink="/" next="Language" nextLink="/language" date={props.pageContext.frontmatter.date}>
+
+# Data Structure
+
+## Advanced
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["datastructure"]["advanced"]}/>
+
+## Text Editing
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["datastructure"]["text"]}/>
+
+## Hashing
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["datastructure"]["hash"]}/>
+
+## Misc
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["datastructure"]["misc"]}/>
+
+# Algorithm
+
+## Search
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["algo"]["search"]}/>
+
+## Finite State Machine (FSM)
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["algo"]["fsm"]}/>
+
+## Regex vs Regular Expression
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["algo"]["regex"]}/>
+
+## For fun
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["algo"]["fun"]}/>
+
+## Informatics
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["algo"]["info"]}/>
+
+## Misc
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["algo"]["misc"]}/>
+
+# Theoretical Computer Science (TCS)
+
+## News
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["tcs"]["news"]}/>
+
+## Parsing
+
+<LinkList list= {GroupByCat(props.data.allTheoryJson.nodes)["tcs"]["parse"]}/>
+
+
+</PageNavigation>
+</Layout>
