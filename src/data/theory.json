@@ -1,0 +1,282 @@
+[
+  {
+    "id": 17,
+    "category": "datastructure",
+    "subcategory": "advanced",
+    "title": "Understanding Clojure's Persistent Vectors",
+    "url": "https://hypirion.com/musings/understanding-persistent-vector-pt-3",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 18,
+    "category": "datastructure",
+    "subcategory": "advanced",
+    "title": "Are Lock-Free Concurrent Algorithms Practically Wait-Free?",
+    "url": "https://arxiv.org/abs/1311.3200",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 19,
+    "category": "datastructure",
+    "subcategory": "advanced",
+    "title": "Advanced Data Structures",
+    "url": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 20,
+    "category": "datastructure",
+    "subcategory": "advanced",
+    "title": "Purely Functional Data Structures",
+    "url": "https://www.amazon.com/Purely-Functional-Data-Structures-Okasaki/dp/0521663504",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 21,
+    "category": "datastructure",
+    "subcategory": "advanced",
+    "title": "PROBABILISTIC DATA STRUCTURES FOR WEB ANALYTICS AND DATA MINING",
+    "url": "https://highlyscalable.wordpress.com/2012/05/01/probabilistic-structures-web-analytics-data-mining/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 22,
+    "category": "algo",
+    "subcategory": "misc",
+    "title": "Proving that Android’s, Java’s and Python’s sorting algorithm is broken (and showing how to fix it)",
+    "url": "http://www.envisage-project.eu/proving-android-java-and-python-sorting-algorithm-is-broken-and-how-to-fix-it/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 23,
+    "category": "datastructure",
+    "subcategory": "text",
+    "title": "Text editor - this is not your highest mathematics, then you have to think",
+    "url": "https://sudonull.com/post/10550-Text-editor-this-is-not-your-highest-mathematics-then-you-have-to-think",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 24,
+    "category": "datastructure",
+    "subcategory": "text",
+    "title": "The Craft of Text Editing, or, Emacs for the Modern World",
+    "url": "https://web.mit.edu/~yandros/doc/craft-text-editing/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 25,
+    "category": "datastructure",
+    "subcategory": "text",
+    "title": "Rope science - Introduction",
+    "url": "https://xi-editor.io/docs/rope_science_00.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 26,
+    "category": "algo",
+    "subcategory": "search",
+    "title": "Inside the Algolia Engine Part 2 — The Indexing Challenge of Instant Search",
+    "url": "https://www.algolia.com/blog/engineering/inside-the-algolia-engine-part-2-the-indexing-challenge-of-instant-search/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 27,
+    "category": "algo",
+    "subcategory": "fsm",
+    "title": "Index 1,600,000,000 Keys with Automata and Rust",
+    "url": "https://blog.burntsushi.net/transducers/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 28,
+    "category": "algo",
+    "subcategory": "search",
+    "title": "A Deep And Fuzzy Dive Into Search",
+    "url": "https://www.arangodb.com/2020/07/deep-and-fuzzy-dive-into-search/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 29,
+    "category": "algo",
+    "subcategory": "search",
+    "title": "Bellman, Dynamic Programming, and Edit Distance",
+    "url": "https://rjlipton.wordpress.com/2009/03/22/bellman-dynamic-programming-and-edit-distance/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 30,
+    "category": "tcs",
+    "subcategory": "news",
+    "title": "A New Map Traces the Limits of Computation",
+    "url": "https://www.quantamagazine.org/edit-distance-reveals-hard-computational-problems-20150929/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 31,
+    "category": "algo",
+    "subcategory": "fsm",
+    "title": "Damn Cool Algorithms: Levenshtein Automata",
+    "url": "http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 32,
+    "category": "algo",
+    "subcategory": "fsm",
+    "title": "Of Levenshtein automata implementations",
+    "url": "https://fulmicoton.com/posts/levenshtein/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 33,
+    "category": "algo",
+    "subcategory": "search",
+    "title": "Lucene's FuzzyQuery is 100 times faster in 4.0",
+    "url": "http://blog.mikemccandless.com/2011/03/lucenes-fuzzyquery-is-100-times-faster.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 34,
+    "category": "datastructure",
+    "subcategory": "advanced",
+    "title": "Merkle Trees",
+    "url": "https://nakamoto.com/merkle-trees/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 35,
+    "category": "tcs",
+    "subcategory": "news",
+    "title": "More Graph Isomorphism Drama",
+    "url": "https://blogs.ams.org/blogonmathblogs/2017/01/16/more-graph-isomorphism-drama/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 36,
+    "category": "algo",
+    "subcategory": "fsm",
+    "title": "The Rise Of The State Machines",
+    "url": "https://www.smashingmagazine.com/2018/01/rise-state-machines/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 37,
+    "category": "tcs",
+    "subcategory": "parse",
+    "title": "A Guide to Parsing: Algorithms and Terminology",
+    "url": "https://tomassetti.me/guide-parsing-algorithms-terminology/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 38,
+    "category": "datastructure",
+    "subcategory": "hash",
+    "title": "Robin Hood Hashing should be your default Hash Table implementation",
+    "url": "https://www.sebastiansylvan.com/post/robin-hood-hashing-should-be-your-default-hash-table-implementation/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 39,
+    "category": "datastructure",
+    "subcategory": "hash",
+    "title": "Hash map implementations in practice",
+    "url": "https://shlegeris.com/2017/01/06/hash-maps.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 40,
+    "category": "datastructure",
+    "subcategory": "hash",
+    "title": "Double Hashing (Lueker and Molodowitch)",
+    "url": "https://mybiasedcoin.blogspot.com/2015/03/double-hashing-lueker-and-molodowitch.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 41,
+    "category": "datastructure",
+    "subcategory": "hash",
+    "title": "CSE525: Randomized Algorithms and Probabilistic Analysis, Lecture 5: Universal and perfect hashing",
+    "url": "https://courses.cs.washington.edu/courses/cse525/13sp/scribe/lec5.pdf",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 42,
+    "category": "datastructure",
+    "subcategory": "hash",
+    "title": "CS294 Partition Functions Lecture 7 (Coupling in Markov Chain)",
+    "url": "http://people.eecs.berkeley.edu/~sinclair/cs294/n7.pdf",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 43,
+    "category": "algo",
+    "subcategory": "info",
+    "title": "Online Demo for bpg image format",
+    "url": "https://xooyoozoo.github.io/yolo-octo-bugfixes/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 44,
+    "category": "algo",
+    "subcategory": "regex",
+    "title": "Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)",
+    "url": "https://swtch.com/~rsc/regexp/regexp1.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 45,
+    "category": "algo",
+    "subcategory": "fun",
+    "title": "Snergly: Maze Algorithms in ClojureScript",
+    "url": "https://vanderburg.org/snergly/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 46,
+    "category": "algo",
+    "subcategory": "fun",
+    "title": "Procedural Dungeon Generation: A Drunkard's Walk in ClojureScript",
+    "url": "https://blog.jrheard.com/procedural-dungeon-generation-drunkards-walk-in-clojurescript",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 47,
+    "category": "algo",
+    "subcategory": "fun",
+    "title": "Mazes for Programmers: Binary tree and Sidewinder",
+    "url": "https://daemianmack.org/posts/2019/11/mazes-for-programmers-binary-tree-and-sidewinder.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 48,
+    "category": "algo",
+    "subcategory": "regex",
+    "title": "Understanding Regular Expressions",
+    "url": "https://www.foo.be/docs/tpj/issues/vol1_2/tpj0102-0006.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 49,
+    "category": "datastructure",
+    "subcategory": "misc",
+    "title": "Evolution of Strings in Java to Compact Strings and Indify String Concatenation",
+    "url": "https://arnaudroger.github.io/blog/2017/06/14/CompactStrings.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 50,
+    "category": "tcs",
+    "subcategory": "parse",
+    "title": "Why is parsing considered solved?",
+    "url": "https://jeffreykegler.github.io/Ocean-of-Awareness-blog/individual/2018/05/knuth_1965.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 51,
+    "category": "tcs",
+    "subcategory": "parse",
+    "title": "Undershoot: Parsing theory in 1965",
+    "url": "https://jeffreykegler.github.io/Ocean-of-Awareness-blog/individual/2018/07/knuth_1965_2.html",
+    "thumbnail": "../images/generic_document.png"
+  }
+]

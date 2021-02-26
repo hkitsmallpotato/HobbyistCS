@@ -1,0 +1,90 @@
+[
+  {
+    "id": 52,
+    "category": "os",
+    "subcategory": "general",
+    "title": "Writing an OS in Rust (First Edition)",
+    "url": "https://os.phil-opp.com/edition-1/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 53,
+    "category": "architecture",
+    "subcategory": "misc",
+    "title": "A trip through the Graphics Pipeline 2011",
+    "url": "https://fgiesen.wordpress.com/2011/07/09/a-trip-through-the-graphics-pipeline-2011-index/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 54,
+    "category": "architecture",
+    "subcategory": "misc",
+    "title": "How FPGAs work, and why you'll buy one",
+    "url": "https://yosefk.com/blog/how-fpgas-work-and-why-youll-buy-one.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 55,
+    "category": "os",
+    "subcategory": "general",
+    "title": "How The Kernel Manages Your Memory",
+    "url": "https://manybutfinite.com/post/how-the-kernel-manages-your-memory/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 56,
+    "category": "os",
+    "subcategory": "ipc",
+    "title": "CIS 307: Implementing Hoare's Monitors",
+    "url": "https://cis.temple.edu/~giorgio/old/cis307s95/readings/monitor.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 57,
+    "category": "os",
+    "subcategory": "ipc",
+    "title": "Monitor Types",
+    "url": "https://pages.mtu.edu/~shene/NSF-3/e-Book/MONITOR/monitor-types.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 58,
+    "category": "os",
+    "subcategory": "ipc",
+    "title": "The Little Book of Semaphores",
+    "url": "https://greenteapress.com/wp/semaphores/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 59,
+    "category": "os",
+    "subcategory": "general",
+    "title": "A COMMENTARY ON THE SIXTH EDITION UNIX OPERATING SYSTEM J. Lions.",
+    "url": "https://warsus.github.io/lions-/",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 60,
+    "category": "os",
+    "subcategory": "general",
+    "title": "The Linux kernel user’s and administrator’s guide",
+    "url": "https://www.kernel.org/doc/html/latest/admin-guide/index.html",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 61,
+    "category": "os",
+    "subcategory": "ipc",
+    "title": "Multiprocessor Real-Time Locking Protocols: A Systematic Review",
+    "url": "https://arxiv.org/abs/1909.09600",
+    "thumbnail": "../images/generic_document.png"
+  },
+  {
+    "id": 62,
+    "category": "os",
+    "subcategory": "ipc",
+    "title": "Starvation-free mutual exclusion with semaphores",
+    "url": "https://www.researchgate.net/publication/257335361_Starvation-free_mutual_exclusion_with_semaphores",
+    "thumbnail": "../images/generic_document.png"
+  }
+]
