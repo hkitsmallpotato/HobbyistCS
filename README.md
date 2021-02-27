@@ -1,99 +1,29 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# HobbyistCS
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[![Actions Status](https://github.com/hkitsmallpotato/HobbyistCS/workflows/Manual%20IPFS%20Deploy/badge.svg)](https://github.com/hkitsmallpotato/HobbyistCS/actions)
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+_Complementary, selective, curated resource list that extends the "core" undergrad CS syallabus._
 
-## 🚀 Quick start
+- Manual ipfs deploy URL (branch: `manual-ipfs`): https://hobbyistcs.lemontea.letz.dev/
+- Fleek's PaaS URL (branch: `main`): https://hobbyistcs.on.fleek.co/
 
-1.  **Create a Gatsby site.**
+## Technical Details
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+tl;dr - It is a [JAMStack](https://jamstack.org/) style website that uses some decentralized/web3 goodies ([IPFS](https://ipfs.io/), mainly).
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+### The Website
 
-1.  **Start developing.**
+We uses [Gatsby](https://www.gatsbyjs.com/) because it is versatile and powerful. For UI/theming, we uses [Material UI](https://material-ui.com/) and write the components ourselves. For data sourcing, we used plain JSON files for the raw resource data (because we want to have a static API at some point). Unfortunately, Gatsby's GraphQL layer isn't powerful enough to fully automate everything (or maybe I'm just ignorant on this front - open a pull request/issue explaining a solution if you know a way), but luckily, the number of manual pages on this website would probably have a strict upper limit. We also uses the wonderful [MDX](https://mdxjs.com/) to freely mixes Markdown and components in the same file.
 
-    Navigate into your new site’s directory and start it up.
+To avoid painstakingly writing the JSON file entry-by-entry, we currently uses a Google Sheets that have a small [Google Apps Script](https://github.com/hkitsmallpotato/utils/tree/main/google_AppsScript/GenerateJSON) to auto generate JSON.
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+Images on the main pages are from the public domain.
 
-1.  **Open the source code and start editing!**
+### Deployment
 
-    Your site is now running at `http://localhost:8000`!
+We have both a [Fleek](https://fleek.co/hosting/) deployment and a manual ipfs deployment. As Fleek is end-to-end, there's not much to be said.
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
+Some modification is needed when deploying to ipfs manually - turns out that you need to use relative links on the Gatsby site. We uses [this plugin](https://github.com/moxystudio/gatsby-plugin-ipfs) and follow the instruction there to modify the project config files. (So a main catch with this repo is that this change is only present on branch `manual-ipfs` so that one can do local development with the other branches (?)) For the rest, we mostly followed [this article](https://medium.com/microsoftazure/distributed-web-host-your-website-with-ipfs-clusters-cloudflare-and-devops-edb3a60e9ae5). We setup a Github CI/CD action in the `manual-ipfs` branch. After the build, it uses the [ipfs-deploy](https://github.com/ipfs-shipyard/ipfs-deploy) command line. We uses [Infura](https://infura.io/)'s free pinning service. The command line returns a hash/address.
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+We used a free subdomain provided by [Afraid](https://freedns.afraid.org/subdomain/), but we delegate to using [Dynv6](https://dynv6.com/)'s free DNS service by setting up `NS` entries. Then we use API to automatically update the `TXT` entry for [DNSLink](https://dnslink.io/). Finally, we register our subdomain on [Cloudflare's IPFS gateway](https://www.cloudflare.com/distributed-web-gateway/) and have it issue a certificate.
 
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
