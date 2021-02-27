@@ -30,6 +30,11 @@ function makeHAL(self_uri, children) {
   return result;
 }
 
+function addEmbeddedCollection(hal, name, data) {
+  if (!hal.hasOwnProperty("_embedded")) { hal["_embedded"] = {}; }
+  hal["_embedded"][`ea:${name}`] = data;
+}
+
 const db = []
 
 const dataFiles = glob.sync(path.join(__dirname, "../src/data/*.json"))
@@ -44,5 +49,13 @@ fs.mkdirSync(rootDir, { recursive: true })
 
 const indexPath = path.join(rootDir, "index.json")
 const indexData = makeHAL("/index.json", db)
-fs.writeFileSync(indexPath, JSON.stringify(indexData))
+fs.writeFileSync(indexPath, JSON.stringify(indexData, null, 2))
+
+for (const entity of db) {
+  const entityPath = path.join(rootDir, `${entity.name}.json`)
+  var entityData = makeHAL(`/${entity.name}.json`, [])
+  addEmbeddedCollection(entityData, "resources", entity.content)
+  
+  fs.writeFileSync(entityPath, JSON.stringify(entityData, null, 2))
+}
 
