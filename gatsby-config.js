@@ -13,9 +13,11 @@ module.exports = {
     linkedsites: [
       { text: "wtfwebdev", type: "external_url", link: "http://todo.local" }
     ],
-    githubrepo: "https://github.com/hkitsmallpotato/HobbyistCS"
+    githubrepo: "https://github.com/hkitsmallpotato/HobbyistCS",
+    siteUrl: "https://hobbyistcs.lemontea.letz.dev"
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
